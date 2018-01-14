@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['./app/index.js'],
+    entry: ['babel-polyfill', './app/index.js'],
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'bundle.js'
@@ -10,7 +10,7 @@ module.exports = {
         loaders: [
             {
                 loader: 'babel-loader',
-                test: /\.js$/,
+                test: /\.js$/, // a regular expression that catches .js files
                 exclude: /node_modules/
             }
         ]
